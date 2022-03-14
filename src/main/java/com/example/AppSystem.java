@@ -12,15 +12,12 @@ public class AppSystem extends TheSystem {
     @Override
     public void display() {
         // Your code here
-        //This is bullet point 2: TheSystem desplays all of the availabe items in the app system
+        //This is bullet point 2: TheSystem displays all of the available items in the app system
         //and asks the user to enter the name of an item to be added to the cart.
-        for (Map.Entry<String, Item> entry : itemCollection.entrySet())
-            System.out.println("Key = " + entry.getKey() +
-                    ", Value = " + entry.getValue());
-        //***Question: Why doesn't this Lambda work???
-//        itemCollection.forEach(k,v) -> {
-//            System.out.println(k + v);
-//        }
+//        System();
+        itemCollection.forEach((k,v) -> System.out.printf("k: %-10s v: %-10s %-10s" +
+                " %-10d\n", k, v.getItemDesc(), v.getItemPrice(), v.getAvailableQuantity()));
+        //Lambda
     }//display()
 
     @Override      // this overwrites the parents class add method

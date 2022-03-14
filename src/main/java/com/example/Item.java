@@ -4,14 +4,14 @@ package com.example;
 private String itemName;
 private String itemDesc;
 private Double itemPrice;
-private int quantity;
-private int availableQuantity;
+private Integer quantity;
+private Integer availableQuantity;
 //Constructors
-     public Item() {
+    public Item() {
         this.quantity = 1;
     }
 
-    public Item(String itemName, String itemDesc, Double itemPrice, int availableQuantity) {
+    public Item(String itemName, String itemDesc, Double itemPrice, Integer availableQuantity) {
             // Your code here
             this.itemName = itemName;
             this.itemDesc = itemDesc;
@@ -53,7 +53,7 @@ private int availableQuantity;
         this.quantity = quantity;
     }
 
-    public int getAvailableQuantity() {
+    public Integer getAvailableQuantity() {
         return availableQuantity;
     }
 

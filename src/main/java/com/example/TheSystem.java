@@ -12,13 +12,12 @@ public abstract class TheSystem {
     Item item = new Item();
     private HashMap<String, Item> itemCollection = new HashMap<String, Item>();
     private HashMap<String, Item> shoppingCart = new HashMap<String, Item>();
-
     private File file = new File("C:\\Users\\ekele\\IdeaProjects\\SolutionCoreJavaSBA\\resources\\sample.txt");
 
     TheSystem() {
         // Your code here
-    if(getClass().getSimpleName().equals("App System"))
-    readFile();
+        if(getClass().getSimpleName().equals("App System"))
+            readFile();
     }//The System
 
     public void readFile() {
@@ -26,8 +25,8 @@ public abstract class TheSystem {
             Scanner sc = new Scanner(file);
             while (sc.hasNextLine()) {
                 String itemInfo = sc.nextLine();
-                String[] itemInfoSplit = itemInfo.split("\\s");
-                Item newItem = new Item(itemInfoSplit[0], itemInfoSplit[1], Double.parseDouble(itemInfoSplit[2]), Integer.parseInt(itemInfoSplit[3]));
+                String[] itemInfoSplit = itemInfo.split("\\s\\s");
+                Item newItem = new Item(itemInfoSplit[0], itemInfoSplit[1], Double.valueOf(itemInfoSplit[2]), Integer.valueOf(itemInfoSplit[3]));
                 itemCollection.put(itemInfoSplit[0], newItem);
             }//while input.hasNextLine()
         }//try
@@ -35,6 +34,10 @@ public abstract class TheSystem {
             e.printStackTrace();
         }//catch
     }//readFile method
+
+//    public void System() {
+//          readFile();
+//    }
 
     public HashMap<String, Item> getItemCollection() {
         // Your code here
@@ -57,7 +60,10 @@ public abstract class TheSystem {
     }//HashMap-setItemCollection method
 
     public Boolean checkAvailability(Item item) {
-        if (item.getQuantity() >= item.getAvailableQuantity()) {
+        if (this.item.getAvailableQuantity() == null) {
+            return true;
+        }//getAvailableQuantity null checker
+        if (this.item.getQuantity() >= this.item.getAvailableQuantity()) {
             System.out.printf("System is unable to add %s ", item.getItemName() + "to the cart.  System only has %d%s ", item.getAvailableQuantity(), item .getItemName()+ "[s].");
             return false; }//if quantities checker
             else
