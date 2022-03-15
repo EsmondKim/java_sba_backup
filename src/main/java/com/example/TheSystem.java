@@ -44,11 +44,11 @@ public abstract class TheSystem {
     }//HashMap-setItemCollection method
 
     public Boolean checkAvailability(Item item) {
-//        if (this.item.getAvailableQuantity() == null) {
+//        if (item.getAvailableQuantity() == null) {
 //            return false;
 //        }//getAvailableQuantity null checker
-        if (item.getQuantity() >= item.getAvailableQuantity()) {
-            System.out.printf("System is unable to add %s ", itemCollection.get(item.getItemName()).getItemName() + "to the cart.  System only has %d%s ", itemCollection.get(item.getItemName()).getAvailableQuantity(), itemCollection.get(item.getItemName()).getItemName()+ "[s].");
+        if (itemCollection.get(item.getItemName()).getQuantity() >= itemCollection.get(item.getItemName()).getAvailableQuantity()) {
+            System.out.printf("System is unable to add %s to the cart. System only has %d %s \n", itemCollection.get(item.getItemName()).getItemName(), itemCollection.get(item.getItemName()).getAvailableQuantity(), itemCollection.get(item.getItemName()).getItemName() + "[s].\n");
             return false; }//if quantities checker
             else
          {   return true; }//else
@@ -58,12 +58,15 @@ public abstract class TheSystem {
         if (item == null) {
             return false;
         }//if
-        else if (itemCollection.containsKey(item.getItemName()) && itemCollection.containsKey(item.getAvailableQuantity() > 1))
+        else if (itemCollection.containsKey(item.getItemName()) && itemCollection.get(item.getItemName()).getQuantity() >= 1)
         {
-            this.item.setQuantity(item.getQuantity() + 1);
+            itemCollection.get(item.getItemName()).setQuantity(item.getQuantity() + 1);
             return true;
         }//else if contains
         else if(!itemCollection.containsKey(item.getItemName())) {
+//            if(itemCollection.get(item_name).getQuantity() == 1) {
+//                this.itemCollection.get(item_name).setQuantity(itemCollection.get(item_name).getQuantity() + 1);
+//            }//nested if for quantity, to add subsequent identical items to the cart.
             setItemCollection(item.getItemName(), item);
             return true;
         }//else if doesn't contain
