@@ -53,11 +53,16 @@ private Integer availableQuantity;
         this.quantity = quantity;
     }
 
-    public Integer getAvailableQuantity() {
-        return availableQuantity;
-    }
+//    public Integer getAvailableQuantity() {
+//        return availableQuantity;
+//    }
 
-    public void setAvailableQuantity(int availableQuantity) {
+
+     public Integer getAvailableQuantity() {
+         return availableQuantity;
+     }
+
+     public void setAvailableQuantity(int availableQuantity) {
         this.availableQuantity = availableQuantity;
     }
 
