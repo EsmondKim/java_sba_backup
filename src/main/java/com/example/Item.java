@@ -4,11 +4,11 @@ package com.example;
 private String itemName;
 private String itemDesc;
 private Double itemPrice;
-private Integer quantity = 0;
+private Integer quantity;
 private Integer availableQuantity;
 //Constructors
     public Item() {
-//        this.quantity = 1;
+        this.quantity = 1;
     }
 
     public Item(String itemName, String itemDesc, Double itemPrice, Integer availableQuantity) {
@@ -17,7 +17,7 @@ private Integer availableQuantity;
             this.itemDesc = itemDesc;
             this.itemPrice = itemPrice;
             this.availableQuantity = availableQuantity;
-//            this.quantity = 1;
+            this.quantity = 1;
         }//Constructor
 
 //Getters and setters

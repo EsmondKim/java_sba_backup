@@ -1,5 +1,6 @@
 package com.example;
 
+import javax.sound.midi.Soundbank;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -17,6 +18,7 @@ public class CartSystem extends TheSystem {
     @Override
     public void display() {
         // Your code here
+        System.out.println("Cart: ");
         System.out.printf("%-20s %-20s %-10s %-10s %-10s \n", "Name:", "Description:", "Price:", "Quantity:", "Subtotal: ");
         Iterator iCIterator = itemCollection.entrySet().iterator();
         while (iCIterator.hasNext()) {
