@@ -40,8 +40,13 @@ public class AppSystem extends TheSystem {
         // Your code here
         if (itemCollection.containsKey(item_name)) {
             itemCollection.get(item_name).setAvailableQuantity(itemCollection.get(item_name).getAvailableQuantity() - 1);
-            return itemCollection.get(item_name);
+                if ( itemCollection.get(item_name).getAvailableQuantity() == 0) {
+                        remove(item_name);
+                }//nested if
+                return itemCollection.get(item_name);
         }//if containsKey
+
+
         else {
             return null;
         }//else

@@ -57,7 +57,7 @@ private Integer availableQuantity;
          return availableQuantity;
      }
 
-    public void setAvailableQuantity(int availableQuantity) {
+    public void setAvailableQuantity(Integer availableQuantity) {
         this.availableQuantity = availableQuantity;
     }
     //Getters and setters

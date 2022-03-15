@@ -44,12 +44,11 @@ public abstract class TheSystem {
     }//HashMap-setItemCollection method
 
     public Boolean checkAvailability(Item item) {
-//        if (item.getAvailableQuantity() == null) {
-//            return false;
-//        }//getAvailableQuantity null checker
-        if (itemCollection.get(item.getItemName()).getQuantity() >= itemCollection.get(item.getItemName()).getAvailableQuantity()) {
-            System.out.printf("System is unable to add %s to the cart. System only has %d %s \n", itemCollection.get(item.getItemName()).getItemName(), itemCollection.get(item.getItemName()).getAvailableQuantity(), itemCollection.get(item.getItemName()).getItemName() + "[s].\n");
-            return false; }//if quantities checker
+        if (item.getQuantity() >= item.getAvailableQuantity()) {
+            System.out.printf("System is unable to add %s to the cart. System only has %d %s \n",
+                    item.getItemName(), item.getAvailableQuantity(), item.getItemName()
+                     + "[s].\n");
+            return false; }//if
             else
          {   return true; }//else
     }//checkAvailability method
