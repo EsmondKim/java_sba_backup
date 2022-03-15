@@ -53,18 +53,12 @@ private Integer availableQuantity;
         this.quantity = quantity;
     }
 
-//    public Integer getAvailableQuantity() {
-//        return availableQuantity;
-//    }
-
-
-     public Integer getAvailableQuantity() {
+    public Integer getAvailableQuantity() {
          return availableQuantity;
      }
 
-     public void setAvailableQuantity(int availableQuantity) {
+    public void setAvailableQuantity(int availableQuantity) {
         this.availableQuantity = availableQuantity;
     }
-
     //Getters and setters
 }//Item class

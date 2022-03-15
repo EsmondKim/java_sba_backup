@@ -6,8 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-//import static jdk.internal.jshell.tool.Startup.readFile;
-
 public abstract class TheSystem {
     Item item = new Item();
 
@@ -16,14 +14,10 @@ public abstract class TheSystem {
     TheSystem() {
         // Your code here
         if(this.getClass().getSimpleName().equals("AppSystem")) {
-            //variables below for HackerRank environment
             String path = "/resources";
             String filename = "/sample.txt";
             String curDir = System.getProperty("user.dir");
             try {
-                    //Old absolute path variable for IntelliJ/local machine
-//                File file = new File("C:\\Users\\ekele\\IdeaProjects\\SolutionCoreJavaSBA\\resources\\sample.txt");
-                //File variable for HackerRank environment below.
                 File file = new File(curDir + path, filename);
                 Scanner sc = new Scanner(file);
                 while (sc.hasNextLine()) {
@@ -39,10 +33,6 @@ public abstract class TheSystem {
         }//if Statement
     }//The System
 
-//    public void System() {
-//          readFile();
-//    }
-
     public HashMap<String, Item> getItemCollection() {
         // Your code here
         return itemCollection;
@@ -52,11 +42,6 @@ public abstract class TheSystem {
         // Your code here
         this.itemCollection.put(itemName, item);
     }//HashMap-setItemCollection method
-
-//    IntelliJ's auto generated setItemCollection code
-//    public void setItemCollection(HashMap<String, Item> itemCollection) {
-//        this.itemCollection = itemCollection;
-//    }
 
     public Boolean checkAvailability(Item item) {
 //        if (this.item.getAvailableQuantity() == null) {

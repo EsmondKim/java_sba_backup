@@ -7,8 +7,6 @@ public class MainEntryPoint {
 	public static Scanner reader = new Scanner(System.in);
 	
 	public static void main(String[] args) throws IOException {
-		//All of these cases 1-7 are the Bullet Points 1-7 under Work-Flow.
-		//So you need to understand the case statements and connect the cases to your code.
 		
 		AppSystem app = new AppSystem();
 		CartSystem cart = new CartSystem();
