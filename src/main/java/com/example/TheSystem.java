@@ -48,7 +48,7 @@ public abstract class TheSystem {
 //            return false;
 //        }//getAvailableQuantity null checker
         if (item.getQuantity() >= item.getAvailableQuantity()) {
-            System.out.printf("System is unable to add %s ", item.getItemName() + "to the cart.  System only has %d%s ", item.getAvailableQuantity(), item .getItemName()+ "[s].");
+            System.out.printf("System is unable to add %s ", itemCollection.get(item.getItemName()).getItemName() + "to the cart.  System only has %d%s ", itemCollection.get(item.getItemName()).getAvailableQuantity(), itemCollection.get(item.getItemName()).getItemName()+ "[s].");
             return false; }//if quantities checker
             else
          {   return true; }//else

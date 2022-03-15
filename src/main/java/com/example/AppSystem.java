@@ -1,9 +1,11 @@
 package com.example;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
 public class AppSystem extends TheSystem {
+    DecimalFormat df = new DecimalFormat("0.00");
     HashMap<String, Item> itemCollection = getItemCollection();
 
     AppSystem() {
@@ -15,7 +17,7 @@ public class AppSystem extends TheSystem {
         System.out.println("App System Inventory:");
         System.out.printf("%-20s %-20s %-20s %-10s \n", "Name:", "Description:", "Price:", "Available Quantity:");
         itemCollection.forEach((k,v) -> System.out.printf("%-20s %-20s %-20s" +
-                " %-10d\n", k, v.getItemDesc(), v.getItemPrice(), v.getAvailableQuantity()));
+                " %-10d\n", k, v.getItemDesc(), df.format(v.getItemPrice()), v.getAvailableQuantity()));
         //Lambda
     }//display()
 
