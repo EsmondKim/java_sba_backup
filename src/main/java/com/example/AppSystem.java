@@ -12,7 +12,9 @@ public class AppSystem extends TheSystem {
     @Override
     public void display() {
         // Your code here
-        itemCollection.forEach((k,v) -> System.out.printf("k: %-10s v: %-10s %-10s" +
+        System.out.println("App System Inventory:");
+        System.out.printf("%-20s %-20s %-20s %-10s \n", "Name:", "Description:", "Price:", "Available Quantity:");
+        itemCollection.forEach((k,v) -> System.out.printf("%-20s %-20s %-20s" +
                 " %-10d\n", k, v.getItemDesc(), v.getItemPrice(), v.getAvailableQuantity()));
         //Lambda
     }//display()
